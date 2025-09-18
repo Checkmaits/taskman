@@ -1,0 +1,57 @@
+@use "sass:color";
+@use "colors" as c;
+
+body {
+  color: c.$bodyText;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  color: c.$headings;
+}
+
+a {
+  color: c.$primary;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: color.adjust(c.$primary, $lightness: -10%);
+  }
+
+  &:active {
+    color: color.adjust(c.$primary, $lightness: -15%);
+  }
+}
+
+// Bootstrap ".text" overrides
+.text {
+  &-primary {
+    color: c.$primary !important;
+  }
+}
+
+// Bootstrap ".btn" overrides
+.btn {
+  &-outline {
+    &-primary {
+      color: c.$primary !important;
+      border-color: c.$primary !important;
+
+      &:hover {
+        color: white !important;
+        border-color: c.$primary !important;
+        background-color: c.$primary !important;
+      }
+
+      &:active {
+        color: white !important;
+        border-color: color.adjust(c.$primary, $lightness: -10%) !important;
+        background-color: color.adjust(c.$primary, $lightness: -10%) !important;
+      }
+    }
+  }
+}

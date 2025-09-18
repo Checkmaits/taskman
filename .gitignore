@@ -1,0 +1,11 @@
+# IDE-specific
+.idea/
+.vscode/
+
+# Node.js
+node_modules/
+package-lock.json
+.env
+
+# macOS
+.DS_Store
